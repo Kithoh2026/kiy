@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebDev Pro | Разработка сайтов</title>
+
+    <!-- GLightbox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+
     <style>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
         /* --- СТИЛИ (CSS) --- */
         :root {
             --bg-color: #0f172a;
@@ -41,7 +44,7 @@
         .hero h1 { font-size: 4rem; margin-bottom: 20px; line-height: 1.1; }
         .hero h1 span { color: var(--accent); }
         .hero p { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
-        .cta-btn { padding: 15px 40px; background: var(--gradient); color: white; border-radius: 50px; font-size: 1.1rem; font-weight: bold; box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3); display: inline-block; }
+        .cta-btn { padding: 15px 40px; background: var(--gradient); color: white; border-radius: 50px; font-size: 1.1rem; font-weight: bold; box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3); display: inline-block; cursor: pointer; border: none; }
         .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(56, 189, 248, 0.4); }
 
         /* Portfolio */
@@ -52,12 +55,21 @@
         .project-card { background: var(--card-bg); border-radius: 15px; overflow: hidden; transition: 0.3s; border: 1px solid #334155; position: relative; }
         .project-card:hover { transform: translateY(-10px); border-color: var(--accent); }
         
-        /* Обновлённый стиль для изображений */
+        /* Стили для кликабельных изображений */
+        .project-img-link {
+            display: block;
+            overflow: hidden;
+            cursor: zoom-in;
+        }
         .project-img { 
             height: 200px; 
             width: 100%; 
             object-fit: cover; 
             display: block;
+            transition: transform 0.4s ease;
+        }
+        .project-img-link:hover .project-img {
+            transform: scale(1.08);
         }
 
         .project-info { padding: 25px; }
@@ -111,7 +123,7 @@
         </div>
     </section>
 
-    <!-- Портфолио с реальными изображениями -->
+    <!-- Портфолио с кликабельными изображениями -->
     <section id="portfolio" class="section">
         <div class="container">
             <h2 class="section-title">Мои последние работы</h2>
@@ -119,9 +131,9 @@
                 
                 <!-- Проект 1 -->
                 <div class="project-card">
-                    <a href="images/shop.jpg" class="glightbox zoomable">
-  <img src="images/photo1.jpg" alt="Описание">
-</a>
+                    <a href="images/shop.jpg" class="glightbox project-img-link" data-gallery="portfolio" data-glightbox="title: E-Commerce Store; description: Интернет-магазин одежды">
+                        <img src="images/shop.jpg" alt="E-Commerce Store" class="project-img">
+                    </a>
                     <div class="project-info">
                         <h3>E-Commerce Store</h3>
                         <p>Интернет-магазин одежды с интеграцией оплаты и админ-панелью. Высокая скорость загрузки.</p>
@@ -135,9 +147,10 @@
 
                 <!-- Проект 2 -->
                 <div class="project-card">
-                    <a href="corp.jpg" class="glightbox zoomable">
-  <img src="images/photo1.jpg" alt="Описание">
-</a>                    <div class="project-info">
+                    <a href="images/corp.jpg" class="glightbox project-img-link" data-gallery="portfolio" data-glightbox="title: Корпоративный портал; description: Сайт для юридической фирмы">
+                        <img src="images/corp.jpg" alt="Корпоративный портал" class="project-img">
+                    </a>
+                    <div class="project-info">
                         <h3>Корпоративный портал</h3>
                         <p>Сайт для юридической фирмы. Строгий стиль, формы обратной связи, карта офисов.</p>
                         <div class="tags">
@@ -150,9 +163,9 @@
 
                 <!-- Проект 3 -->
                 <div class="project-card">
-                    <a href="images/app.jpg" class="glightbox zoomable">
-  <img src="images/photo1.jpg" alt="Описание">
-</a>
+                    <a href="images/app.jpg" class="glightbox project-img-link" data-gallery="portfolio" data-glightbox="title: Landing Page IT; description: Продающий одностраничник для мобильного приложения">
+                        <img src="images/app.jpg" alt="Landing Page IT" class="project-img">
+                    </a>
                     <div class="project-info">
                         <h3>Landing Page IT</h3>
                         <p>Продающий одностраничник для мобильного приложения. Анимации и 3D графика.</p>
@@ -207,7 +220,18 @@
         </div>
     </footer>
 
+    <!-- GLightbox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script>
+        // Инициализация Lightbox с галереей
+        const lightbox = GLightbox({
+            selector: '.glightbox',
+            touchNavigation: true,
+            loop: true,
+            skin: 'clean'
+        });
+
+        // Копирование номера карты
         function copyCard() {
             const cardText = document.getElementById('card-number').innerText;
             navigator.clipboard.writeText(cardText).then(() => {
@@ -216,10 +240,6 @@
                 console.error('Ошибка копирования', err);
             });
         }
-<a href="images/photo1.jpg" class="glightbox zoomable">
-  <img src="images/photo1.jpg" alt="Описание">
-</a>
     </script>
-
 </body>
 </html>
