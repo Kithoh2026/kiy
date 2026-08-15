@@ -78,6 +78,27 @@
         .tags { display: flex; gap: 10px; flex-wrap: wrap; }
         .tag { background: rgba(56, 189, 248, 0.1); color: var(--accent); padding: 5px 10px; border-radius: 5px; font-size: 0.8rem; }
 
+        /* Price Banner */
+        .price-banner {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.08) 0%, rgba(129, 140, 248, 0.08) 100%);
+            border-top: 1px solid #334155;
+            border-bottom: 1px solid #334155;
+        }
+        .price-banner .price-text {
+            font-size: 3rem;
+            font-weight: bold;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        .price-banner .price-sub {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
         /* Payment / Pricing */
         .payment-section { background: #162032; text-align: center; }
         .price-card { background: var(--card-bg); max-width: 500px; margin: 0 auto; padding: 40px; border-radius: 20px; border: 1px solid var(--accent); position: relative; overflow: hidden; }
@@ -95,6 +116,7 @@
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
             .nav-links { display: none; }
+            .price-banner .price-text { font-size: 2rem; }
         }
     </style>
 </head>
@@ -178,6 +200,14 @@
                 </div>
 
             </div>
+        </div>
+    </section>
+
+    <!-- Блок с ценой -->
+    <section class="price-banner">
+        <div class="container">
+            <div class="price-text">Цена сайта 100₽</div>
+            <p class="price-sub">Фиксированная стоимость за лендинг. Без скрытых платежей.</p>
         </div>
     </section>
 
