@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebDev Pro | Разработка сайтов</title>
     <style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
         /* --- СТИЛИ (CSS) --- */
         :root {
             --bg-color: #0f172a;
@@ -118,7 +119,9 @@
                 
                 <!-- Проект 1 -->
                 <div class="project-card">
-                    <img src="images/shop.jpg" alt="Интернет-магазин одежды" class="project-img" loading="lazy">
+                    <a href="images/shop.jpg" class="glightbox zoomable">
+  <img src="images/photo1.jpg" alt="Описание">
+</a>
                     <div class="project-info">
                         <h3>E-Commerce Store</h3>
                         <p>Интернет-магазин одежды с интеграцией оплаты и админ-панелью. Высокая скорость загрузки.</p>
@@ -132,8 +135,9 @@
 
                 <!-- Проект 2 -->
                 <div class="project-card">
-                    <img src="images/corp.jpg" alt="Корпоративный портал юридической фирмы" class="project-img" loading="lazy">
-                    <div class="project-info">
+                    <a href="corp.jpg" class="glightbox zoomable">
+  <img src="images/photo1.jpg" alt="Описание">
+</a>                    <div class="project-info">
                         <h3>Корпоративный портал</h3>
                         <p>Сайт для юридической фирмы. Строгий стиль, формы обратной связи, карта офисов.</p>
                         <div class="tags">
@@ -146,7 +150,9 @@
 
                 <!-- Проект 3 -->
                 <div class="project-card">
-                    <img src="images/app.jpg" alt="Landing Page для мобильного приложения" class="project-img" loading="lazy">
+                    <a href="images/app.jpg" class="glightbox zoomable">
+  <img src="images/photo1.jpg" alt="Описание">
+</a>
                     <div class="project-info">
                         <h3>Landing Page IT</h3>
                         <p>Продающий одностраничник для мобильного приложения. Анимации и 3D графика.</p>
@@ -210,6 +216,10 @@
                 console.error('Ошибка копирования', err);
             });
         }
+<a href="images/photo1.jpg" class="glightbox zoomable">
+  <img src="images/photo1.jpg" alt="Описание">
+</a>
     </script>
+
 </body>
 </html>
