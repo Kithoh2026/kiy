@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kithoh2026.github.io/kiy/sitemap.xml
